@@ -1,0 +1,6 @@
+---
+Name: stripe
+---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - Letsco\Stripe\StripeSiteConfig

@@ -1,0 +1,47 @@
+{
+    "name": "letsco-co/silverstripe-stripe",
+    "description": "Stripe module for SilverStripe",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "module",
+        "cms",
+        "stripe"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Johann Delebarre",
+            "email": "johann.delebarre@letsco.co"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "silverstripe/framework": "^5"
+    },
+    "extra": {
+        "installer-name": "stripe",
+        "expose": [
+            "css",
+            "javascript"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Letsco\\Stripe\\": "src/",
+            "Letsco\\Stripe\\Tests\\": "tests/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/letsco-co/silverstripe-stripe/issues"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
