@@ -1,6 +1,9 @@
 ---
 Name: stripe
 ---
+SilverStripe\Control\Director:
+  rules:
+    'v1//$Action/$ID/$Name': 'Letsco\Stripe\StripeController'
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Letsco\Stripe\StripeSiteConfig
