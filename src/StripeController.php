@@ -313,6 +313,7 @@ class StripeController extends Controller
             );
             
             $OutTransfer->Status = StripeTransfer::STATUS_PAID;
+            $OutTransfer->TransferId = $transfer->id;
             $OutTransfer->write();
             
             $transfers[] = [
