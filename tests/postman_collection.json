@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "d78d8c95-d521-47fb-b645-441fcc9a7363",
+		"name": "Stripe payment gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clientId\": \"api@pada1.app\",\n    \"clientSecret\": \"api@pada1.app\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stripe-payment-gateway.delebarre.me/v1/auth",
+					"protocol": "https",
+					"host": [
+						"stripe-payment-gateway",
+						"delebarre",
+						"me"
+					],
+					"path": [
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get connect account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "edf99b8b26af1040f7e611828e6ede66cb780c45",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/v1/connect/acct_1G6uWJE5QLVGU9Oe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"v1",
+						"connect",
+						"acct_1G6uWJE5QLVGU9Oe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create connect account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "edf99b8b26af1040f7e611828e6ede66cb780c45",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/v1/connect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"v1",
+						"connect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "91fd190bd9a095b46eee5475a0af82883a1b6742",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer\": \"cus_GnEOc37qDWEIg9\",\n    \"amount\": 2000,\n    \"fees\": 160,\n    \"total_amount\": 5000,\n    \"description\": \"Glo_0009\",\n    \"meta\": {\n        \"meta_1\": \"A\",\n        \"meta_2\": \"B\"\n    },\n    \"accounts\": [\n        {\n            \"id\": \"acct_1G6uWJE5QLVGU9Oe\",\n            \"amount\": 1500,\n            \"meta\": {\n                \"facture\":\"FAC-001\"\n            }\n        },\n        {\n            \"id\": \"acct_1FochCGaiuN2SiM4\",\n            \"amount\": 500,\n            \"meta\": {\n                \"facture\":\"FAC-002\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stripe-payment-gateway.delebarre.me/v1/payment",
+					"protocol": "https",
+					"host": [
+						"stripe-payment-gateway",
+						"delebarre",
+						"me"
+					],
+					"path": [
+						"v1",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redo payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "91fd190bd9a095b46eee5475a0af82883a1b6742",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://stripe-payment-gateway.delebarre.me/v1/payment/py_1NREf3GrJiI7Pt6nxVynHEJD",
+					"protocol": "https",
+					"host": [
+						"stripe-payment-gateway",
+						"delebarre",
+						"me"
+					],
+					"path": [
+						"v1",
+						"payment",
+						"py_1NREf3GrJiI7Pt6nxVynHEJD"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
