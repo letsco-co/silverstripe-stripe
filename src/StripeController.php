@@ -277,7 +277,7 @@ class StripeController extends Controller
             return false;
         }
 
-        return $this->doTransfers($chargeId);
+        return $this->doTransfers($charge['id']);
     }
 
     /**
