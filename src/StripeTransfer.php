@@ -41,7 +41,7 @@ class StripeTransfer extends DataObject
             'Type'        => 'Type',
             'Status'      => 'Statut',
             'Description' => 'Description',
-            'Amount.Nice' => 'Montant',
+            'Amount.Nice' => 'Montant', // @TODO May override Nice function to divide amount by 100 (currently in cents)
         ];
 
         $this->extend("updateSummaryFields", $fields);
