@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d78d8c95-d521-47fb-b645-441fcc9a7363",
+		"_postman_id": "dba901c1-6587-42de-bc4a-1931be10801d",
 		"name": "Stripe payment gateway",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28950461"
 	},
 	"item": [
 		{
@@ -20,12 +21,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://stripe-payment-gateway.delebarre.me/v1/auth",
-					"protocol": "https",
+					"raw": "{{environment}}/v1/auth",
 					"host": [
-						"stripe-payment-gateway",
-						"delebarre",
-						"me"
+						"{{environment}}"
 					],
 					"path": [
 						"v1",
@@ -43,7 +41,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "edf99b8b26af1040f7e611828e6ede66cb780c45",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -51,12 +49,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8001/v1/connect/acct_1G6uWJE5QLVGU9Oe",
-					"protocol": "http",
+					"raw": "{{environment}}/v1/connect/acct_1G6uWJE5QLVGU9Oe",
 					"host": [
-						"localhost"
+						"{{environment}}"
 					],
-					"port": "8001",
 					"path": [
 						"v1",
 						"connect",
@@ -74,7 +70,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "edf99b8b26af1040f7e611828e6ede66cb780c45",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -82,12 +78,10 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8001/v1/connect",
-					"protocol": "http",
+					"raw": "{{environment}}/v1/connect",
 					"host": [
-						"localhost"
+						"{{environment}}"
 					],
-					"port": "8001",
 					"path": [
 						"v1",
 						"connect"
@@ -104,7 +98,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "91fd190bd9a095b46eee5475a0af82883a1b6742",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -121,12 +115,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://stripe-payment-gateway.delebarre.me/v1/payment",
-					"protocol": "https",
+					"raw": "{{environment}}/v1/payment",
 					"host": [
-						"stripe-payment-gateway",
-						"delebarre",
-						"me"
+						"{{environment}}"
 					],
 					"path": [
 						"v1",
@@ -144,7 +135,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "91fd190bd9a095b46eee5475a0af82883a1b6742",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -152,12 +143,9 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://stripe-payment-gateway.delebarre.me/v1/payment/py_1NREf3GrJiI7Pt6nxVynHEJD",
-					"protocol": "https",
+					"raw": "{{environment}}/v1/payment/py_1NREf3GrJiI7Pt6nxVynHEJD",
 					"host": [
-						"stripe-payment-gateway",
-						"delebarre",
-						"me"
+						"{{environment}}"
 					],
 					"path": [
 						"v1",
@@ -167,6 +155,38 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "environment",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
